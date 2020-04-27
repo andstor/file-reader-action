@@ -4,7 +4,7 @@
 
 ![build-test](https://github.com/andstor/file-reader-action/workflows/build/badge.svg)
 
-This is a GitHub Action to read the contents of a file. Provide it with a path to a file and it provides you with the file's contents, accessible through an output variable.
+This is a GitHub Action to read the contents of a file. Give it a path to a file and it provides you with the file's contents, accessible through an output variable.
 
 ## Usage
 
