@@ -1,16 +1,15 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import fs from 'fs'
+import util from 'util'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const filePath = core.getInput('path')
+    const encoding = core.getInput('encoding')
+    const readFile = util.promisify(fs.readFile)
+    const contents = await readFile(filePath, encoding)
+    core.info(`File contents:\n${contents}`)
+    core.setOutput('contents', contents)
   } catch (error) {
     core.setFailed(error.message)
   }

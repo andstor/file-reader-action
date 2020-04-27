@@ -1,101 +1,60 @@
-<p align="center">
-  <a href="https://github.com/actions/typescript-action/actions"><img alt="typescript-action status" src="https://github.com/actions/typescript-action/workflows/build-test/badge.svg"></a>
-</p>
+# file-reader-ation
 
-# Create a JavaScript Action using TypeScript
+> GitHub Action to read the contents of a file
 
-Use this template to bootstrap the creation of a JavaScript action.:rocket:
+![build-test](https://github.com/andstor/file-reader-action/workflows/build/badge.svg)
 
-This template includes compilication support, tests, a validation workflow, publishing, and versioning guidance.  
+This is a GitHub Action to read the contents of a file. Provide it with a path to a file and it provides you with the file's contents, accessible through an output variable.
 
-If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
+## Usage
 
-## Create an action from this template
+The following example [workflow step](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) will read the contents of the `package.json` file.
 
-Click the `Use this Template` and provide the new repo details for your action
-
-## Code in Master
-
-Install the dependencies  
-```bash
-$ npm install
+```yml
+- name: "Read file contents"
+  uses: andstor/file-reader-action@v1
+  with:
+    path: "package.json"
 ```
 
-Build the typescript and package it for distribution
-```bash
-$ npm run build && npm run pack
+## Options ⚙️
+
+The following input variables options can/must be configured:
+
+|Input variable|Necessity|Description|Default|
+|----|----|----|----|
+|`path`|Required|the path to the file to read.||
+|`encoding`|Optional|the encoding of the file to read.|`utf8`|
+
+## Outputs
+- `contents`: The contents of the file.
+
+## Example
+
+```yml
+name: "Read file contents"
+
+on: [push, pull_request]
+
+jobs:
+  file_contents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "package.json"
+
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
 ```
 
-Run the tests :heavy_check_mark:  
-```bash
-$ npm test
+## License
 
- PASS  ./index.test.js
-  ✓ throws invalid number (3ms)
-  ✓ wait 500 ms (504ms)
-  ✓ test runs (95ms)
+Copyright © 2020 [André Storhaug](https://github.com/andstor)
 
-...
-```
-
-## Change action.yml
-
-The action.yml contains defines the inputs and output for your action.
-
-Update the action.yml with your name, description, inputs and outputs for your action.
-
-See the [documentation](https://help.github.com/en/articles/metadata-syntax-for-github-actions)
-
-## Change the Code
-
-Most toolkit and CI/CD operations involve async operations so the action is run in an async function.
-
-```javascript
-import * as core from '@actions/core';
-...
-
-async function run() {
-  try { 
-      ...
-  } 
-  catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-run()
-```
-
-See the [toolkit documentation](https://github.com/actions/toolkit/blob/master/README.md#packages) for the various packages.
-
-## Publish to a distribution branch
-
-Actions are run from GitHub repos so we will checkin the packed dist folder. 
-
-Then run [ncc](https://github.com/zeit/ncc) and push the results:
-```bash
-$ npm run pack
-$ git add dist
-$ git commit -a -m "prod dependencies"
-$ git push origin releases/v1
-```
-
-Your action is now published! :rocket: 
-
-See the [versioning documentation](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
-
-## Validate
-
-You can now validate the action by referencing `./` in a workflow in your repo (see [test.yml](.github/workflows/test.yml)])
-
-```yaml
-uses: ./
-with:
-  milliseconds: 1000
-```
-
-See the [actions tab](https://github.com/actions/javascript-action/actions) for runs of this action! :rocket:
-
-## Usage:
-
-After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md) to reference the stable and latest V1 action
+file-reader-action is licensed under the [MIT License](https://github.com/andstor/file-reader-ation/blob/master/LICENSE).

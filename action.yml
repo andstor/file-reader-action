@@ -1,10 +1,20 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'File Reader'
+description: 'Read the contents of a file'
+author: 'André Storhaug'
+branding:
+  icon: 'file-text'
+  color: 'blue'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  path:
+    description: 'The path to the file to be read.'
+    required: true
+  encoding:
+    description: 'The encoding of the file.'
+    default: 'utf8'
+    required: false
+outputs:
+  contents:
+    description: 'The file contents.'
 runs:
   using: 'node12'
   main: 'dist/index.js'

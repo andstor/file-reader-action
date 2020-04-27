@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
+  "name": "file-reader-action",
+  "version": "1.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "GitHub Action to read the contents of a file",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -11,19 +11,26 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/andstor/file-reader-action.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "file",
+    "reader"
   ],
-  "author": "YourNameOrOrganization",
+  "author": {
+    "name": "André Storhaug",
+    "email": "andr3.storhaug@gmail.com",
+    "url": "https://github.com/andstor"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andstor/file-reader-action/issues"
+  },
   "dependencies": {
     "@actions/core": "^1.2.0"
   },
