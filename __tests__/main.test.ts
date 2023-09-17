@@ -10,7 +10,7 @@ import * as core from '@actions/core'
 import * as main from '../src/main'
 
 // Mock the GitHub Actions core library
-const debugMock = jest.spyOn(core, 'debug')
+const infoMock = jest.spyOn(core, 'info')
 const getInputMock = jest.spyOn(core, 'getInput')
 const setFailedMock = jest.spyOn(core, 'setFailed')
 const setOutputMock = jest.spyOn(core, 'setOutput')
@@ -18,8 +18,9 @@ const setOutputMock = jest.spyOn(core, 'setOutput')
 // Mock the action's main function
 const runMock = jest.spyOn(main, 'run')
 
-// Other utilities
-const timeRegex = /^\d{2}:\d{2}:\d{2}/
+// The expected content of file sample.txt
+const expectedContent = 'Sample text file for tests'
+const expectedError = 'ENOENT: no such file or directory, open .+?'
 
 describe('action', () => {
   beforeEach(() => {
@@ -29,49 +30,39 @@ describe('action', () => {
   it('sets the path output', async () => {
     // Set the action's inputs as return values from core.getInput()
     getInputMock.mockImplementation((name: string): string => {
-      switch (name) {
-        case 'path':
-          return 'README.md'
-        default:
-          return ''
-      }
+      if (name === 'path') return 'sample.txt'
+      else return ''
     })
 
     await main.run()
     expect(runMock).toHaveReturned()
 
     // Verify that all of the core library functions were called correctly
-    expect(debugMock).toHaveBeenNthCalledWith(1, 'Waiting 500 milliseconds ...')
-    expect(debugMock).toHaveBeenNthCalledWith(
-      2,
-      expect.stringMatching(timeRegex)
-    )
-    expect(debugMock).toHaveBeenNthCalledWith(
-      3,
-      expect.stringMatching(timeRegex)
+    expect(infoMock).toHaveBeenNthCalledWith(
+      1,
+      `File contents:\n${expectedContent}`
     )
     expect(setOutputMock).toHaveBeenNthCalledWith(
       1,
-      'time',
-      expect.stringMatching(timeRegex)
+      'contents',
+      expectedContent
     )
   })
 
   it('sets a failed status', async () => {
     // Set the action's inputs as return values from core.getInput()
     getInputMock.mockImplementation((name: string): string => {
-      switch (name) {
-        case 'path':
-          return 'README.notfound'
-        default:
-          return ''
-      }
+      if (name === 'path') return 'README.notfound'
+      else return ''
     })
 
     await main.run()
     expect(runMock).toHaveReturned()
 
     // Verify that all of the core library functions were called correctly
-    expect(setFailedMock).toHaveBeenNthCalledWith(1, 'Invalid path')
+    expect(setFailedMock).toHaveBeenNthCalledWith(
+      1,
+      expect.stringMatching(expectedError)
+    )
   })
 })

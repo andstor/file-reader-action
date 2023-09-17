@@ -9,12 +9,11 @@ import util from 'util'
 export async function run(): Promise<void> {
   try {
     const filePath: string = core.getInput('path')
-    const encoding: string | null = core.getInput('encoding')
     const readFile = util.promisify(fs.readFile)
-    const contents = await readFile(filePath, { encoding: encoding })
+    const contents = await readFile(filePath, 'utf8')
     core.info(`File contents:\n${contents}`)
     core.setOutput('contents', contents)
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message)
+  } catch (error: unknown) {
+    core.setFailed((error as Error).message)
   }
 }
