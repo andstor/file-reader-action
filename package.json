@@ -5,7 +5,7 @@
   "description": "GitHub Action to read the contents of a file",
   "homepage": "https://github.com/marketplace/actions/github-file-reader-action-v2",
   "bugs": {
-    "url": "https://github.com/guibranco/file-reader-action-v2/issues"
+    "url": "https://github.com/guibranco/github-file-reader-action-v2/issues"
   },
   "main": "lib/main.js",
   "exports": {
@@ -39,7 +39,7 @@
     "package:watch": "npm run package -- --watch",
     "test": "(jest && make-coverage-badge --output-path ./badges/coverage.svg) || make-coverage-badge --output-path ./badges/coverage.svg",
     "all": "npm run format:write && npm run lint && npm run test && npm run package"
-  },  
+  },
   "jest": {
     "preset": "ts-jest",
     "verbose": true,
@@ -69,7 +69,6 @@
       "./src/**"
     ]
   },
-  
   "dependencies": {
     "@actions/core": "^1.10.1"
   },
