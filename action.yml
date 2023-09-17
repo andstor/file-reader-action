@@ -3,7 +3,7 @@ description: 'Read the contents of a file'
 author: 'GuiBranco'
 branding:
   icon: 'file-text'
-  color: 'blue'
+  color: 'green'
 inputs:
   path:
     description: 'The path to the file to be read.'
