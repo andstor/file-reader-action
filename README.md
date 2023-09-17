@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/GuiBrancofile-reader-action-v2"><img alt="file-reader-action-v2 status" src="https://github.com/GuiBranco/file-reader-action-v2/workflows/build/badge.svg"></a>
-  <a href="https://wakatime.com/badge/github/guibranco/file-reader-action-v2"><img src="https://wakatime.com/badge/github/guibranco/file-reader-action-v2.svg" alt="wakatime"></a>
+  <a href="https://github.com/GuiBranco/github-file-reader-action-v2"><img alt="github-file-reader-action-v2 status" src="https://github.com/GuiBranco/github-file-reader-action-v2/workflows/build/badge.svg"></a>
+  <a href="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2"><img src="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2.svg" alt="wakatime"></a>
 </p>
 
 # GitHub File Reader Action V2
@@ -19,7 +19,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Read file contents"
-  uses: guibranco/file-reader-action-v2@v2.0.2
+  uses: guibranco/github-file-reader-action-v2@v2.0.3
   with:
     path: "package.json"
 ```
@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Read file contents
-        uses: guibranco/file-reader-action-v2@v2.0.2
+        uses: guibranco/github-file-reader-action-v2@v2.0.3
         with:
           path: "package.json"
 
@@ -64,4 +64,4 @@ jobs:
 
 Copyright © 2020 [André Storhaug](https://github.com/andstor), [GuiBranco](https://github.com/guibranco).
 
-file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/file-reader-action-v2/blob/main/LICENSE).
+file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/github-file-reader-action-v2/blob/main/LICENSE).

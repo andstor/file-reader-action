@@ -1,4 +1,4 @@
-name: 'github-file-reader-v2'
+name: 'github-file-reader-action-v2'
 description: 'Read the contents of a file'
 author: 'GuiBranco'
 branding:
