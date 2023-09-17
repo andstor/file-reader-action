@@ -6,8 +6,6 @@ GitHub Action to read the contents of a file
 >
 > **Disclaimer** This version was created because the [original (V1)](https://github.com/guibranco/file-reader-action-v2) has not been updated by the creator for a while.
 
-![build-test](https://github.com/guibranco/file-reader-action-v2/workflows/build/badge.svg)
-
 This is a GitHub Action to read the contents of a file. Give it a path to a file and it provides you with the file's contents, accessible through an output variable.
 
 ## Usage
@@ -49,7 +47,7 @@ jobs:
 
       - name: Read file contents
         id: read_file
-        uses: andstor/file-reader-action@v1
+        uses: guibranco/file-reader-action-v2@v1
         with:
           path: "package.json"
 
