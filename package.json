@@ -1,6 +1,6 @@
 {
-  "name": "file-reader-action",
-  "version": "1.0.0",
+  "name": "file-reader-action-v2",
+  "version": "2.0.0",
   "private": true,
   "description": "GitHub Action to read the contents of a file",
   "main": "lib/main.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andstor/file-reader-action.git"
+    "url": "git+https://github.com/guibranco/file-reader-action-v2.git"
   },
   "keywords": [
     "actions",
@@ -27,9 +27,16 @@
     "email": "andr3.storhaug@gmail.com",
     "url": "https://github.com/andstor"
   },
+  "contributors": [
+    {
+      "name": "Guilherme Branco Stracini",
+      "email": "guilherme@guilhermebranco.com.br",
+      "url": "https://github.com/guibranco"
+    }    
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andstor/file-reader-action/issues"
+    "url": "https://github.com/guibranco/file-reader-action-v2/issues"
   },
   "dependencies": {
     "@actions/core": "^1.2.0"
