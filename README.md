@@ -19,7 +19,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Read file contents"
-  uses: guibranco/file-reader-action-v2@v1.0.2
+  uses: guibranco/file-reader-action-v2@v2.0.1
   with:
     path: "package.json"
 ```
@@ -52,7 +52,7 @@ jobs:
 
       - name: Read file contents
         id: read_file
-        uses: guibranco/file-reader-action-v2@v1.0.2
+        uses: guibranco/file-reader-action-v2@v2.0.1
         with:
           path: "package.json"
 
