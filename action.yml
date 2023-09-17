@@ -1,6 +1,6 @@
 name: 'github-file-reader-action-v2'
 description: 'Read the contents of a file'
-author: 'GuiBranco'
+author: 'guibranco'
 branding:
   icon: 'file-text'
   color: 'green'

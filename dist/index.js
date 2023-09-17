@@ -2765,8 +2765,10 @@ const util_1 = __importDefault(__nccwpck_require__(837));
 async function run() {
     try {
         const filePath = core.getInput('path');
+        const encoding = core.getInput('encoding');
         const readFile = util_1.default.promisify(fs_1.default.readFile);
-        const contents = await readFile(filePath, 'utf8');
+        const contentBuffer = await readFile(filePath, encoding);
+        const contents = contentBuffer.toString();
         core.info(`File contents:\n${contents}`);
         core.setOutput('contents', contents);
     }

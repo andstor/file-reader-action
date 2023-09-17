@@ -1,6 +1,13 @@
 <p align="center">
-  <a href="https://github.com/GuiBranco/github-file-reader-action-v2"><img alt="github-file-reader-action-v2 status" src="https://github.com/GuiBranco/github-file-reader-action-v2/workflows/build/badge.svg"></a>
-  <a href="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2"><img src="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2.svg" alt="wakatime"></a>
+  <a href="https://github.com/guibranco/github-file-reader-action-v2">
+    <img src="https://github.com/guibranco/github-file-reader-action-v2/actions/workflows/ci.yml/badge.svg" alt="CI status">
+  </a>
+  <a href="https://github.com/guibranco/github-file-reader-action-v2">
+    <img src="https://github.com/guibranco/github-file-reader-action-v2/actions/workflows/linter.yml/badge.svg" alt="Linter status">
+  </a>
+  <a href="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2">
+    <img src="https://wakatime.com/badge/github/guibranco/github-file-reader-action-v2.svg" alt="wakatime">
+  </a>
 </p>
 
 # GitHub File Reader Action V2
@@ -9,7 +16,7 @@ GitHub Action to read the contents of a file
 
 > **Warning**
 >
-> **Disclaimer** This version was created because the [original (V1)](https://github.com/andstor/file-reader-action) has not been updated by the creator for a while.
+> **Disclaimer:** This version was created because the [original (V1)](https://github.com/andstor/file-reader-action) has not been updated by the creator for a while.
 
 This is a GitHub Action to read the contents of a file. Give it a path to a file and it provides you with the file's contents, accessible through an output variable.
 
@@ -19,7 +26,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Read file contents"
-  uses: guibranco/github-file-reader-action-v2@v2.0.3
+  uses: guibranco/file-reader-action-v2@latest
   with:
     path: "package.json"
 ```
@@ -52,7 +59,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Read file contents
-        uses: guibranco/github-file-reader-action-v2@v2.0.3
+        uses: guibranco/file-reader-action-v2@latest
         with:
           path: "package.json"
 
@@ -62,6 +69,6 @@ jobs:
 
 ## License
 
-Copyright © 2020 [André Storhaug](https://github.com/andstor), [GuiBranco](https://github.com/guibranco).
+Copyright © 2023 [André Storhaug](https://github.com/andstor), [GuiBranco](https://github.com/guibranco).
 
-file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/github-file-reader-action-v2/blob/main/LICENSE).
+file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/file-reader-action-v2/blob/main/LICENSE).

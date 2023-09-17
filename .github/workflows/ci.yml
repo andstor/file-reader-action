@@ -57,3 +57,20 @@ jobs:
       - name: Print Output
         id: output
         run: echo "${{ steps.test-action.outputs.contents }}"
+
+  create-release:
+    name: Create release
+    needs: [test-typescript, test-action]
+    runs-on: ubuntu-latest
+    steps:
+     
+    - name: Create Release
+      uses: ncipollo/release-action@v1.13.0
+      with:
+        allowUpdates: false
+        draft: false
+        makeLatest: true
+        tag: v2.0.${{ github.run_number }}
+        name: Release v2.0.${{ github.run_number }}
+        generateReleaseNotes: true
+        body: Release 2.0.${{ github.run_number }} of GitHub Actions File Reader V2
