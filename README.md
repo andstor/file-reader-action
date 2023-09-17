@@ -19,7 +19,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Read file contents"
-  uses: guibranco/file-reader-action-v2@v2.0.1
+  uses: guibranco/file-reader-action-v2@v2.0.2
   with:
     path: "package.json"
 ```
@@ -34,6 +34,7 @@ The following input variables options can/must be configured:
 |`encoding`|Optional|the encoding of the file to read.|`utf8`|
 
 ## Outputs
+
 - `contents`: The contents of the file.
 
 ## Example
@@ -51,8 +52,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Read file contents
-        id: read_file
-        uses: guibranco/file-reader-action-v2@v2.0.1
+        uses: guibranco/file-reader-action-v2@v2.0.2
         with:
           path: "package.json"
 
