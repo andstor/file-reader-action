@@ -61,4 +61,4 @@ jobs:
 
 Copyright © 2020 [André Storhaug](https://github.com/andstor), [GuiBranco](https://github.com/guibranco).
 
-file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/file-reader-ation-v2/blob/main/LICENSE).
+file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/file-reader-action-v2/blob/main/LICENSE).
