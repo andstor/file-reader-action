@@ -26,7 +26,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Read file contents"
-  uses: guibranco/file-reader-action-v2@latest
+  uses: guibranco/github-file-reader-action-v2@latest
   with:
     path: "package.json"
 ```
@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Read file contents
-        uses: guibranco/file-reader-action-v2@latest
+        uses: guibranco/github-file-reader-action-v2@latest
         with:
           path: "package.json"
 
@@ -71,4 +71,4 @@ jobs:
 
 Copyright © 2023 [André Storhaug](https://github.com/andstor), [GuiBranco](https://github.com/guibranco).
 
-file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/file-reader-action-v2/blob/main/LICENSE).
+file-reader-action-v2 is licensed under the [MIT License](https://github.com/guibranco/github-file-reader-action-v2/blob/main/LICENSE).
