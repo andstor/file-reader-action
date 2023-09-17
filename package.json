@@ -1,6 +1,6 @@
 {
   "name": "file-reader-action-v2",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "GitHub Action to read the contents of a file",
   "homepage": "https://github.com/marketplace/actions/github-file-reader-v2",

@@ -52,7 +52,6 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Read file contents
-        id: read_file
         uses: guibranco/file-reader-action-v2@v2.0.2
         with:
           path: "package.json"
