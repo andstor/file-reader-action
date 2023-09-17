@@ -4,7 +4,7 @@ GitHub Action to read the contents of a file
 
 > **Warning**
 >
-> **Disclaimer** This version was created because the [original (V1)](https://github.com/guibranco/file-reader-action-v2) has not been updated by the creator for a while.
+> **Disclaimer** This version was created because the [original (V1)](https://github.com/andstor/file-reader-action) has not been updated by the creator for a while.
 
 This is a GitHub Action to read the contents of a file. Give it a path to a file and it provides you with the file's contents, accessible through an output variable.
 
